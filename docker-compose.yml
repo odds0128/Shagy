@@ -1,0 +1,33 @@
+version: '3.7'
+
+services:
+  app:
+    build: .
+    volumes:
+      - .:/app
+    ports:
+      - 3000:3000
+    environment:
+      - RAILS_ENV=development
+      # DB_HOST_NAME: mongo
+    links:
+      - mongodb:mongodb
+    stdin_open: true
+    tty: true
+
+  nginx:
+    image: nginx:1.14.2
+    ports:
+      - "8080:80"
+    links:
+      - app
+    volumes:
+      - ./public:/usr/share/nginx/html 
+
+  mongodb:
+    image: mongo:4.0.3
+    volumes:
+      - ./db:/data
+    ports:
+      - "27017:27017"
+  
