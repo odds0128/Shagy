@@ -6,7 +6,7 @@
   ```
 - データベース作成
   ```
-  docker-compose exec -it app rails bin/rake db:create
+  docker-compose run app bin/rake db:create db:migrate
   ```
 - コンテナ立ち上げ(これしたらlocalhostで確認できるようになる)
   ```
