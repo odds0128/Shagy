@@ -4,11 +4,11 @@
   ```
   docker-compose build
   ```
-- データベース作成
+- データベース作成(現状何も起こらない)
   ```
   docker-compose run app bin/rake db:create db:migrate
   ```
-- コンテナ立ち上げ(これしたらlocalhostで確認できるようになる)
+- コンテナ立ち上げ
   ```
   docker-compose up
   ```
