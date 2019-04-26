@@ -3909,6 +3909,7 @@ module.exports = function(Chart) {
 			var me = this;
 
 			config = initConfig(config);
+			console.log('item' + item);
 
 			var context = platform.acquireContext(item, config);
 			var canvas = context && context.canvas;
